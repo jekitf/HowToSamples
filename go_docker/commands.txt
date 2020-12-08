@@ -1,0 +1,9 @@
+go run main.go
+
+go build
+
+# alt kan gjøres fra host operativsystemet, da filene blir bygget i containeren golang:1.14.3-alpine
+docker build --tag go_docker:1.0.0 .
+
+docker run --rm -it -p 82:8080 go_docker:1.0.0
+# logg på nettsiden http://127.0.0.1:82/ og få opp NRK
